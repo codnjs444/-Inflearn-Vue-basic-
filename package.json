@@ -8,20 +8,26 @@
     "build": "vite build",
     "preview": "vite preview",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore"
-
   },
   "dependencies": {
-    "sass": "^1.77.8",
     "@vue/eslint-config-prettier": "^7.0.0",
     "eslint": "^8.5.0",
     "eslint-plugin-vue": "^8.2.0",
     "prettier": "^2.5.1",
+    "sass": "^1.77.8",
     "vite-plugin-vuetify": "^2.0.4",
     "vue": "^3.4.37",
     "vuetify": "^3.7.0"
   },
   "devDependencies": {
+    "@types/echarts": "^4.9.22",
+    "@types/js-cookie": "^3.0.6",
+    "@types/node": "^22.5.0",
+    "@types/vue": "^2.0.0",
     "@vitejs/plugin-vue": "^5.1.2",
-    "vite": "^5.4.1"
+    "eslint-plugin-jsdoc": "^50.2.2",
+    "typescript": "^5.5.4",
+    "vite": "^5.4.1",
+    "vite-plugin-checker": "^0.7.2"
   }
 }

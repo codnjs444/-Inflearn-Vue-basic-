@@ -1,36 +1,55 @@
-<template>
-  <v-container>
-    <v-row>
-      <v-col cols="12">
-        {{ original }}
-      </v-col>
-      <v-col cols="12">
-        {{ copy }}
-      </v-col>
-    </v-row>
-  </v-container>
-</template>
+ <template>
+	<v-container>
+		<v-sheet
+			class="pa-4 text-center mx-auto"
+			elevation="12"
+			max-width="600"
+			rounded="lg"
+			width="100%"
+		>
+			<v-icon
+				class="mb-5"
+				color="success"
+				icon="mdi-check-circle"
+				size="112"
+			></v-icon>
 
-<script setup>
-import { readonly, reactive } from "vue"
+			<h2 class="text-h5 mb-6">You reconciled this account</h2>
+			
 
-// original을 readonly로 선언
-const original = readonly(
-  reactive({
-    count: 0
-  })
-)
-const copy = original
+			<p class="mb-4 text-medium-emphasis text-body-2">
+				To see a report on this reconciliation, click <a class="text-decoration-none text-info" href="#">View reconciliation report.</a>
 
-copy.count++
+				<br>
 
-// 이 시도는 오류를 발생시킵니다. (읽기 전용이므로)
-// original.count++
+				Otherwise, you're done!
+			</p>
 
-console.log(original)
-console.log(copy)
-</script>
+			<v-divider class="mb-4"></v-divider>
 
-<style lang="scss" scoped>
+			<div class="text-end">
+				<v-btn
+					class="text-none"
+					color="success"
+					variant="flat"
+					width="90"
+					rounded
+				>
+					Done
+				</v-btn>
+			</div>
+		</v-sheet>
+	</v-container>
+ </template>
+ 
+ <script setup>
+ 
+ </script>
+ 
+ <style lang="scss" scoped>
+ 
+ </style>
 
-</style>
+ v-model로 바인딩 하는 게 있어서
+ 만약 그 v-model의 값이 1일 때는
+ v-model값을 text로 출력하자
