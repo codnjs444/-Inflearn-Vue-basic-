@@ -1,5 +1,6 @@
 import { createVuetify } from 'vuetify'
 import 'vuetify/styles'
+import '@mdi/font/css/materialdesignicons.css' // 아이콘 설정
 
 export default createVuetify({
   theme: {
@@ -16,5 +17,8 @@ export default createVuetify({
         },
       },
     },
+  },
+  icons: {
+    defaultSet: 'mdi', // 아이콘 세트 설정
   },
 })

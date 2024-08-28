@@ -16,7 +16,7 @@
       <v-divider></v-divider>
       <v-col cols="12" class="d-flex flex-column">
         <h2 class="mt-5">Check Box</h2>
-        <v-checkbox label="checkBox" color="warning" value="warning"></v-checkbox>
+        <v-checkbox v-model="isChecked">dd</v-checkbox>
       </v-col>
     </v-row>
   </v-container>
@@ -26,4 +26,5 @@
 import { ref } from 'vue'
 
 const myTest = ref('')
+const isChecked = ref(false)
 </script>
