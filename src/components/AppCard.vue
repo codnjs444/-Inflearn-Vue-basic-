@@ -1,27 +1,49 @@
 <template>
   <div class="card">
     <div class="card-body">
-      <h5 class="card-title ">Card title</h5>
-      <p :class="$style.red">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      <a href="#" class="btn btn-primary">Go somewhere</a>
+      <span class="badge text-bg-secondary">{{ type === 'news' ? '뉴스' : '공지사항' }}</span>
+      <h5 class="card-title mt-2">{{ title }}</h5>
+      <p :class="$style.red">{{ contents }}</p>
+      <a href="#" :class="isLikeClass">좋아요</a>
     </div>
   </div>
 </template>
 
 <script setup>
-console.log('Card.setup;')
+import { defineProps, computed } from 'vue'
+
+const props = defineProps({
+  type: {
+    type: String,
+    default: 'news',
+    validator: value => ['news', 'notice'].includes(value)
+  },
+  title: {
+    type: String,
+    required: true
+  },
+  contents: {
+    type: String,
+    required: true
+  },
+  isLike: {
+    type: Boolean,
+    default: false
+  },
+  obj: {
+    type: Object,
+    default: () => ({})
+  }
+})
+
+const isLikeClass = computed(() => {
+  console.log(props)
+  return props.isLike ? 'btn-danger mt-12' : 'btn-outline-danger'
+})
 </script>
 
 <style module>
-  .red {
-    color: red !important
-  }
-</style>
-
-<!--
-<style scoped>
 .red {
-  color: red !important
+  color: red !important;
 }
 </style>
--->
