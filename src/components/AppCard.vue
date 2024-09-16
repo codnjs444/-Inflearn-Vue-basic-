@@ -1,17 +1,19 @@
 <template>
   <div class="card">
     <div class="card-body">
-      <span class="badge text-bg-secondary">{{ type === 'news' ? '뉴스' : '공지사항' }}</span>
+      <!-- {{$props}} -->
+      <span class="badge text-bg-secondary">{{ typeName }}</span>
       <h5 class="card-title mt-2">{{ title }}</h5>
       <p :class="$style.red">{{ contents }}</p>
-      <a href="#" :class="isLikeClass">좋아요</a>
+      <a href="#"  class="btn" @click="toggleLike" :class="isLikeClass">좋아요</a>
     </div>
   </div>
 </template>
 
 <script setup>
-import { defineProps, computed } from 'vue'
+import { defineProps, computed, defineEmits } from 'vue'
 
+const emit = defineEmits(['toggleLike'])
 const props = defineProps({
   type: {
     type: String,
@@ -24,7 +26,7 @@ const props = defineProps({
   },
   contents: {
     type: String,
-    required: true
+    // required: true
   },
   isLike: {
     type: Boolean,
@@ -37,9 +39,16 @@ const props = defineProps({
 })
 
 const isLikeClass = computed(() => {
-  console.log(props)
-  return props.isLike ? 'btn-danger mt-12' : 'btn-outline-danger'
+  // console.log(props)
+  return props.isLike ? 'btn-danger' : 'btn-outline-danger'
 })
+
+const typeName = computed(() => props.type === 'news' ? '뉴스' : '공지사항',)
+
+const toggleLike = () => {
+  console.log('이벤트 발생됨');
+  emit('toggleLike');
+}
 </script>
 
 <style module>

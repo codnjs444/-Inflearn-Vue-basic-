@@ -8,4 +8,5 @@ export default defineConfig({
     vue(),
     vuetify({ autoImport: true }), // Vuetify 플러그인 설정
   ],
+  
 })
