@@ -5,13 +5,13 @@
         <v-spacer class="my-4"></v-spacer>
         <div class="row g-3">
           <div v-for="items in posts" :key="items.id" class="col col-4" >
-            <AppCard 
+            <PostItem 
               :title= "items.title" 
               :contents="items.contents" 
               :type = "items.type"
               :is-like = "items.isLike"
               @toggle-like="items.isLike = !items.isLike">
-            </AppCard>
+            </PostItem>
             <!-- <v-btn @click="changeLikeValue(items)">toggle</v-btn> -->
           </div>
         </div>
@@ -27,7 +27,7 @@
   </template>
 
   <script setup>
-  import AppCard from './AppCard.vue'
+  import PostItem from './PostItem.vue'
   import PostCreate from './PostCreate.vue'
   import labelInput from './LabelInput.vue'
   import labelTitle from './LabeTitle.vue'
