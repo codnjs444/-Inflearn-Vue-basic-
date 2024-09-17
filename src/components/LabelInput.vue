@@ -14,7 +14,6 @@
 const props = defineProps({
   label: String  // 부모로부터 label을 받음
 })
-
 const username = defineModel({ type: String })  // v-model로 양방향 바인딩 처리
 </script>
 
