@@ -1,13 +1,13 @@
 <template>
   <v-container>
     <v-row class="pa-4">
-      <LifecycleHooks></LifecycleHooks>
+      <TemplateRefs></TemplateRefs>
     </v-row>
   </v-container>
 </template>
 
 <script setup>
-  import LifecycleHooks from "./LifecycleHooks.vue";
+  import TemplateRefs from "./TemplateRefs.vue";
 
 </script>
 
