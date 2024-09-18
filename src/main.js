@@ -8,7 +8,9 @@ import 'material-design-icons-iconfont/dist/material-design-icons.css'
 import '@mdi/font/css/materialdesignicons.css'
 
 const app = createApp(App)
+
 app.config.globalProperties.msg = 'hello'
+
 // PostItem 컴포넌트를 전역 등록
 app.component('PostItem', PostItem)
 
